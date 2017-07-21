@@ -10,7 +10,7 @@
 第二步:在app目录下的build.gradle 中添加dependency依赖包:
 
 	dependencies {
-	    compile 'com.github.fengxiaocan:Vooda:v1.0.1'
+	    compile 'com.github.fengxiaocan:Vooda:v1.0.2'
 	}
 
 第三步:在AndroidManifest清单文件application键中添加构建时间代码(复制粘贴):
