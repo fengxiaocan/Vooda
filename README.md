@@ -37,6 +37,7 @@
         buildTypes {
             debug {
                 ......
+                //这是在调试的时候带上有效期
                 manifestPlaceholders = [EVIL_BUILD_TIME: buildTime()]
             }
         }
@@ -53,4 +54,4 @@
 (CheckOutTime.checkTime()的第一个参数为时间,单位是天,比如过期时间为7天即为7,第二个参数为回调方法),
 实现TimeOutCallback接口,在mothod(boolean b)方法中判断b是否为true,
 如果为true,跳转VoodaActivity,并关闭所有的Activity,取消所有延迟跳转到其他Activityd的方法或线程.
-ok,就这样!
+ok,就这样!打正式包的时候选择TestVersion版本号,即为打上有效期。无限期正式版的时候请去除CheckOutTime.checkTime()方法。
