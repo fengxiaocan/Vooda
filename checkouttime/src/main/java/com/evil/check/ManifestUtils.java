@@ -12,7 +12,7 @@ import android.content.pm.PackageManager;
  * @描述： TODO
  */
 
-public class ManifestUtils {
+class ManifestUtils {
     public static String getManifestString(Context context,String key) {
         String keyString = "";
         try {

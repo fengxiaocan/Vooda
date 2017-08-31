@@ -10,7 +10,7 @@
 第二步:在app目录下的build.gradle 中添加dependency依赖包:
 
 	dependencies {
-	    compile 'com.github.fengxiaocan:Vooda:v1.0.3'
+	    compile 'com.github.fengxiaocan:Vooda:v1.0.4'
 	}
 
 第三步:在AndroidManifest清单文件application键中添加构建时间代码(复制粘贴):
@@ -50,8 +50,28 @@
         }
     }
     
-第六步:在某个Activity内调用CheckOutTime.checkTime()方法
-(CheckOutTime.checkTime()的第一个参数为时间,单位是天,比如过期时间为7天即为7,第二个参数为回调方法),
+第六步:在某个Activity内调用CheckOutTime.checkTime()方法:
+
+    /**
+     * 检测时间是否过期
+     *
+     * @param outTime
+     *        时间,以毫秒为单位,1000L为去1秒;
+     * @param callback
+     *        结果回调,如果为true,则finish所有Activity,并跳转VoodaActivity
+     */
+    checkTime(long outTime,TimeOutCallback callback);
+
+    /**
+     * 检测时间是否过期
+     *
+     * @param outDay
+     *        时间,以天为单位,1为去1天;
+     * @param callback
+     *        结果回调,如果为true,则finish所有Activity,并跳转VoodaActivity
+     */
+    checkTime(int outDay,TimeOutCallback callback)
+        
 实现TimeOutCallback接口,在mothod(boolean b)方法中判断b是否为true,
 如果为true,跳转VoodaActivity,并关闭所有的Activity,取消所有延迟跳转到其他Activityd的方法或线程.
 ok,就这样!打正式包的时候选择TestVersion版本号,即为打上有效期。无限期正式版的时候请去除CheckOutTime.checkTime()方法。
