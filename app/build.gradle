@@ -16,11 +16,22 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            //这是在调试的时候带上有效期
+            manifestPlaceholders = [EVIL_BUILD_TIME: buildTime()]
+        }
     }
     productFlavors {
+        /*客户验证版,有效期为自定义*/
+        TestVersion {
+            manifestPlaceholders = [EVIL_BUILD_TIME: buildTime()]
+        }
     }
 }
-
+def buildTime() {
+    def df = "evil"+System.currentTimeMillis()
+    return df
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

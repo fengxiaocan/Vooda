@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CheckOutTime</string>
+    <!--公钥-->
+    <string name="publickey">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD8rybXZrR0PXvtdHTqcce6UMOWf/5tHd78sxJE1mfo30jsqugcuupMcUo7xdLYW/7YAj3cGMZ2/Cqx+5nLg5GfiaXp1oQDbxt9oFxiPlXHT0XAmpo2FHw27fq7yz9AF3J2JKLY2+f8j4yjnzKM7yn++mVcQp3CFf18cp7a2isQOQIDAQAB</string>
 </resources>
