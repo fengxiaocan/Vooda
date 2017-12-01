@@ -16,7 +16,7 @@ import java.util.Date;
  * @描述： 检测是否超时
  */
 
-public class CheckOutTime{
+public final class CheckOutTime{
 
     public static final  long   DAY_TIME  = 1000 * 60 * 60 * 24;
     public static final  String webUrl1   = "http://www.bjtime.cn";//bjTime
