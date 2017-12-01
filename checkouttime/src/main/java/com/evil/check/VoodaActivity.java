@@ -76,7 +76,7 @@ public class VoodaActivity extends Activity
 
     @Override
     public void success(){
-        Toast.makeText(this,"内测码成功，请重启APP",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"内测码验证成功，请重启APP",Toast.LENGTH_SHORT).show();
         Intent intent = getPackageManager()
                 .getLaunchIntentForPackage(getPackageName());
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
