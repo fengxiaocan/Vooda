@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CheckOutTime.checkTime(20 * 1000L,new CheckOutTime.TimeOutCallback(){
+        CheckOutTime.checkTime(100 * 1000L,new CheckOutTime.TimeOutCallback(){
             @Override
             public void method(boolean t){
                 if(t){

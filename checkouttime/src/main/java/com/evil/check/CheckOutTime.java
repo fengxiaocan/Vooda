@@ -3,6 +3,7 @@ package com.evil.check;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -94,8 +95,10 @@ public final class CheckOutTime{
                 String time = buildStr.substring(4);
                 //获取当前时间
                 long currentTime = getWebsiteDatetime(webUrl4);
+                Log.e("checkTime","currentTime="+currentTime);
                 //获取创建时间
                 long buildTime = Long.valueOf(time);
+                Log.e("checkTime","buildTime="+buildTime);
                 //获取过期时间
                 long newOutTime = buildTime + outTime;
                 //获取最新的测试码时间
@@ -140,8 +143,10 @@ public final class CheckOutTime{
                 String time = buildStr.substring(4);
                 //获取当前时间
                 long currentTime = getWebsiteDatetime(webUrl4);
+                Log.e("checkTime","currentTime="+currentTime);
                 //获取创建时间
                 long buildTime = Long.valueOf(time);
+                Log.e("checkTime","buildTime="+buildTime);
                 //获取过期时间
                 long newOutTime = buildTime + outDay * DAY_TIME;
                 //获取最新的测试码时间
@@ -149,9 +154,13 @@ public final class CheckOutTime{
 
                 if(newTime != null){
                     //比较创建时间
+                    //比较创建时间
+                    if(newTime[0] > buildTime){
+                        buildTime = newTime[0];
+                    }
+
                     if(newTime[1] > newOutTime){
                         newOutTime = newTime[1];
-                        buildTime = newTime[0];
                     }
                 }
                 if(currentTime > newOutTime || currentTime < buildTime){
